@@ -1,0 +1,23 @@
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.driver_class">org.postgresql.Driver</property>
+        <property name="connection.url">jdbc:postgresql://localhost:5432/khib</property>
+        <property name="connection.username">postgres</property>
+        <property name="connection.password">vbwqu1pa</property>
+
+        <!-- JDBC connection pool (use the build-in) -->
+        <property name="connection.pool_size">1</property>
+        <!-- SQL dialect -->
+
+
+        <!-- thread is the short name for org.hibernate.context.ThreadLocalSessionContext -->
+        <property name="current_session_context_class">thread</property>
+
+        <!-- Set "true" to show SQL statements -->
+        <property name="hibernate.show_sql">true</property>
+
+        <!-- mapping class using annotation -->
+        <mapping class="std_kotlin_postgre_hibernate.db.entity.EmployeeEntity"></mapping>
+    </session-factory>
+
+</hibernate-configuration>
