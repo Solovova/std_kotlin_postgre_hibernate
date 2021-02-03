@@ -74,7 +74,7 @@ class TestHibernate {
         val session = sessionFactory.openSession()
         session.beginTransaction()
 
-        for (i in 0..1000000) {
+        for (i in 0..10000) {
             val emp = EmployeeEntity()
             emp.setFirstName("First name $i")
             emp.setLastName("Last name $i")
