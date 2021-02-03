@@ -10,7 +10,7 @@ object HibernateUtil {
     private fun buildSessionFactory(): SessionFactory {
         return try {
             // Create the SessionFactory from hibernate.cfg.xml
-            Configuration().configure(File("hibernate.cgf.xml")).buildSessionFactory()
+            Configuration().configure().buildSessionFactory()
         } catch (ex: Throwable) {
             // Make sure you log the exception, as it might be swallowed
             System.err.println("Initial SessionFactory creation failed.$ex")

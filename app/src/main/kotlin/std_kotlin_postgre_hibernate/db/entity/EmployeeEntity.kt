@@ -1,31 +1,32 @@
 package std_kotlin_postgre_hibernate.db.entity
 
-import org.hibernate.annotations.OptimisticLockType
 import java.io.Serializable
 import javax.persistence.*
 
 @Entity
-@org.hibernate.annotations.Entity(optimisticLock = OptimisticLockType.ALL)
 @Table(
-    name = "Employee",
-    uniqueConstraints = [UniqueConstraint(columnNames = "ID"), UniqueConstraint(columnNames = "EMAIL")]
+    name = "Employee"
 )
 class EmployeeEntity : Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE , generator = "EMPLOYEE_id_seq")
+    @SequenceGenerator(allocationSize = 5000, name="EMPLOYEE_id_seq", sequenceName="EMPLOYEE_id_seq")
     @Column(name = "ID", unique = true, nullable = false)
     private val employeeId: Int? = null
 
-    @Column(name = "EMAIL", unique = true, nullable = false, length = 100)
-    private val email: String? = null
+    @Column(name = "FIRST_NAME", length = 255)
+    private var firstName: String? = null
+    fun setFirstName(firstName:String) {
+        this.firstName = firstName
+    }
 
-    @Column(name = "FIRST_NAME", unique = false, nullable = false, length = 100)
-    private val firstName: String? = null
-
-    @Column(name = "LAST_NAME", unique = false, nullable = false, length = 100)
-    private val lastName: String? = null // Accessors and mutators for all four fields
+    @Column(name = "LAST_NAME", length = 255)
+    private var lastName: String? = null // Accessors and mutators for all four fields
+    fun setLastName(lastName:String) {
+        this.lastName = lastName
+    }
 
     companion object {
-        private const val serialVersionUID = -1798070786993154676L
+        private const val serialVersionUID = 7263309927526074109L
     }
 }

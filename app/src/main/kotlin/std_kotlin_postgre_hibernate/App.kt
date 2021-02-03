@@ -5,6 +5,9 @@
 //https://howtodoinjava.com/hibernate/hibernate-hello-world-application/
 package std_kotlin_postgre_hibernate
 
+import std_kotlin_postgre_hibernate.db.TestHibernate
+import java.util.logging.Level
+
 class App {
     val greeting: String
         get() {
@@ -13,5 +16,7 @@ class App {
 }
 
 fun main() {
+    TestHibernate().testDB()
+    //TestHibernate().testDrop()
     println(App().greeting)
 }

@@ -10,6 +10,8 @@ repositories {
 dependencies {
     implementation("org.hibernate:hibernate-core:5.3.7.Final")
     implementation("org.postgresql:postgresql:42.2.18")
+    implementation ("jakarta.xml.bind:jakarta.xml.bind-api:2.3.2")
+    implementation ("org.apache.logging.log4j:log4j-slf4j-impl:2.14.0")
 
     implementation(platform("org.jetbrains.kotlin:kotlin-bom"))
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")

@@ -4,6 +4,8 @@
         <property name="connection.url">jdbc:postgresql://localhost:5432/khib</property>
         <property name="connection.username">postgres</property>
         <property name="connection.password">vbwqu1pa</property>
+        <property name="hibernate.hbm2ddl.auto">create</property>
+
 
         <!-- JDBC connection pool (use the build-in) -->
         <property name="connection.pool_size">1</property>
@@ -14,7 +16,7 @@
         <property name="current_session_context_class">thread</property>
 
         <!-- Set "true" to show SQL statements -->
-        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.show_sql">false</property>
 
         <!-- mapping class using annotation -->
         <mapping class="std_kotlin_postgre_hibernate.db.entity.EmployeeEntity"></mapping>
